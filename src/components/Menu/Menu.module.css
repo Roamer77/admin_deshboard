@@ -1,0 +1,22 @@
+.menuContainer {
+    width: 270px;
+    height: 100%;
+    background:white;
+    padding-left: 10px;
+    z-index: 1;
+    -webkit-box-shadow: 6px 0 4px -4px #c9c9c9, -6px 0 4px -4px rgba(33, 29, 33, 0.87);
+}
+.groupOfBattens{
+    padding-left:41px;
+}
+.leftNavBarBtn {
+    display: flex !important;
+    justify-content: flex-start;
+    align-items: center;
+    width: 176px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.icon{
+    margin-right: 5px;
+}

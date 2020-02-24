@@ -1,0 +1,9 @@
+.toolbar{
+     display: flex;
+     justify-content: flex-end;
+     width: 100%;
+ }
+.toolbar button{
+   margin: 10px
+}
+

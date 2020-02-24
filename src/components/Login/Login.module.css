@@ -1,0 +1,17 @@
+.cardStyle{
+    padding-top: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: fixed;
+    width: 500px;
+    height: 300px;
+    top:30%;
+    left:35%;
+    background-color: white;
+    box-shadow: 6px 6px 41px 3px rgba(102,97,102,0.38);
+}
+
+.title{
+    padding-left: 36%;
+    padding-bottom: 10px;
+}

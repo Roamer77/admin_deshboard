@@ -1,0 +1,17 @@
+.navStyle{
+
+    background-color: white;
+    -webkit-box-shadow:  0 7px 4px -4px #c9c9c9;
+}
+
+.logoTextStyle{
+    color:  #0058cb;
+    font-weight:bold;
+}
+
+.NavbarTextStyle{
+    padding-left: 10px;
+}
+.logoutBtn{
+    margin-right: 4px;
+}
