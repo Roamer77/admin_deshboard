@@ -1,8 +1,8 @@
-import classes from "../../generalStyles/FlexBox.module.css";
+import classes from "../../../generalStyles/FlexBox.module.css";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Menu from "../Menu/Menu";
 import TopNavBar from "../TopNavBar/TopNavBar";
-import routes from "../../routes";
+import routes from "../../../routes";
 import React from "react";
 
 

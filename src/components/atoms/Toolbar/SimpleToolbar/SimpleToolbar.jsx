@@ -1,10 +1,9 @@
-import classes from "../../../generalStyles/FlexBox.module.css";
+import classes from "../../../../generalStyles/FlexBox.module.css";
 import {Button, Input, InputGroup, InputGroupAddon, InputGroupText} from "reactstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCalculator, faMoneyBillAlt, faSearch, faTable} from "@fortawesome/free-solid-svg-icons";
-
+import { faSearch} from "@fortawesome/free-solid-svg-icons";
 import React, {useState} from "react";
-import CustomModalWindow from "../../CustomModalWindow/CustomModalWindow";
+import CustomModalWindow from "../../UpdateModal/UpdateModal";
 
 
 const SimpleToolbar = ({selectedRecord, toolBarBtns,rowData,titles}) => {
@@ -24,7 +23,7 @@ const SimpleToolbar = ({selectedRecord, toolBarBtns,rowData,titles}) => {
             </div>
             {
                 toolBarBtns.map(({title}) => (
-                    <Button hidden={typeof selectedRecord !== "number"} color="danger" size="sm">{title}</Button>
+                    <Button key={title} hidden={typeof selectedRecord !== "number"} color="danger" size="sm">{title}</Button>
                 ))
             }
             <CustomModalWindow hidden={typeof selectedRecord !== "number"} buttonLabel={'Update'} dataForFields={rowData} titles={titles}/>

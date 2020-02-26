@@ -1,7 +1,7 @@
 import {Card, Table} from "reactstrap";
 import React, {useState} from "react";
 import classNames from "classnames";
-import classes from "../../generalStyles/FlexBox.module.css";
+import classes from "../../../generalStyles/FlexBox.module.css";
 
 const  OrderDetails=(props)=>{
     const [selectedRecord, setSelectedRecord] = useState(null);

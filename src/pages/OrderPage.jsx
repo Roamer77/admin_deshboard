@@ -3,13 +3,13 @@ import {Card, Table} from "reactstrap";
 import useThunkReducer from "react-hook-thunk-reducer";
 import {rootReducer} from "../store";
 import loadListOfOrdersFromSever from "../actions/actions";
-import Toolbar from "../components/Toolbar/Toolbar";
+import Toolbar from "../components/atoms/Toolbar/Toolbar";
 import classes from "../generalStyles/FlexBox.module.css";
 
 import classNames from "classnames";
 import Pagination from "@material-ui/lab/Pagination";
-import OrderDetails from "../components/OrderDetails/OrderDetails";
-import SimpleToolbar from "../components/Toolbar/SimpleToolbar/SimpleToolbar";
+import OrderDetails from "../components/atoms/OrderDetails/OrderDetails";
+import SimpleToolbar from "../components/atoms/Toolbar/SimpleToolbar/SimpleToolbar";
 
 const toolBarBtns = [{
     title: 'Delete',

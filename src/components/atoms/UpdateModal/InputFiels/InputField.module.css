@@ -1,0 +1,19 @@
+.flex_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.flex_element {
+    height: 100%;
+    flex: 1;
+}
+.element1{
+    height: 38px;
+    margin-bottom: 10px;
+    width: 155px;
+}
+.element2{
+
+    flex: 0 1 70%;
+}
