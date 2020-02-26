@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ce6c493-27a9-441c-b021-79348bbcc079" name="Default Changelist" comment="1) добавил модалку &#10;2) отображение данных во вкладке manager and users">
-      <change afterPath="$PROJECT_DIR$/src/components/atoms/DropDownFields/DropDownFields.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/atoms/DropDownFields/DropDownFields.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/atoms/UpdateModal/InputFiels/Field.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/atoms/UpdateModal/InputFiels/InputField.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/atoms/UpdateModal/InputFiels/InputField.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/molecules/ManagementGridToolbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Alert/CustomAlert.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Alert/CustomAlert.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Alert/CustomAlert.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Alert/CustomAlert.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CustomModalWindow/CustomModalWindow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/UpdateModal/UpdateModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Grid/Grid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Grid/Grid.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Login/Login.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Menu/Menu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/Menu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Menu/Menu.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrderDetails/OrderDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/OrderDetails/OrderDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageRouter/PageRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/PageRouter/PageRouter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ReduxTest/FilmList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/ReduxTest/FilmList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ReduxTest/Test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/ReduxTest/Test.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Toolbar/SimpleToolbar/SimpleToolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Toolbar/SimpleToolbar/SimpleToolbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Toolbar/Toolbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Toolbar/Toolbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopNavBar/TopNavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/TopNavBar/TopNavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopNavBar/TopNavBar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/TopNavBar/TopNavBar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ManagmentPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ManagmentPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/OrderPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/OrderPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/UsersPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UsersPage.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="4ce6c493-27a9-441c-b021-79348bbcc079" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +79,7 @@
       <workItem from="1582284639946" duration="10976000" />
       <workItem from="1582532276355" duration="17074000" />
       <workItem from="1582636805881" duration="6196000" />
-      <workItem from="1582709314130" duration="14812000" />
+      <workItem from="1582709314130" duration="15076000" />
     </task>
     <task id="LOCAL-00001" summary="1) добавил модалку &#10;2) отображение данных во вкладке manager and users">
       <created>1582556412461</created>
@@ -117,7 +88,21 @@
       <option name="project" value="LOCAL" />
       <updated>1582556412461</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1 )сделал модалку &#10;2) доделал грид">
+      <created>1582729199435</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582729199435</updated>
+    </task>
+    <task id="LOCAL-00003" summary="1 )сделал модалку &#10;2) доделал грид">
+      <created>1582729411433</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582729411433</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,7 +110,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1) добавил модалку &#10;2) отображение данных во вкладке manager and users" />
-    <option name="LAST_COMMIT_MESSAGE" value="1) добавил модалку &#10;2) отображение данных во вкладке manager and users" />
+    <MESSAGE value="1 )сделал модалку &#10;2) доделал грид" />
+    <option name="LAST_COMMIT_MESSAGE" value="1 )сделал модалку &#10;2) доделал грид" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="198" key="#Notifications" timestamp="1582722879344">
@@ -137,10 +123,10 @@
     </state>
     <state x="726" y="330" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1582115544488" />
     <state x="2646" y="330" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582724124419" />
-    <state x="2450" y="129" key="CommitChangelistDialog2" timestamp="1582729197795">
+    <state x="2450" y="129" key="CommitChangelistDialog2" timestamp="1582729448611">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2450" y="129" key="CommitChangelistDialog2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582729197795" />
+    <state x="2450" y="129" key="CommitChangelistDialog2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582729448611" />
     <state x="2107" y="90" key="DiffContextDialog" timestamp="1582556448389">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -149,26 +135,26 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581926526852" />
-    <state width="1899" height="245" key="GridCell.Tab.0.bottom" timestamp="1582723732611">
+    <state width="1899" height="245" key="GridCell.Tab.0.bottom" timestamp="1582729436255">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1582122385031" />
-    <state width="1899" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582723732611" />
-    <state width="1899" height="245" key="GridCell.Tab.0.center" timestamp="1582723732611">
+    <state width="1899" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582729436255" />
+    <state width="1899" height="245" key="GridCell.Tab.0.center" timestamp="1582729436255">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="245" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1582122385031" />
-    <state width="1899" height="245" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582723732611" />
-    <state width="1899" height="245" key="GridCell.Tab.0.left" timestamp="1582723732611">
+    <state width="1899" height="245" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582729436255" />
+    <state width="1899" height="245" key="GridCell.Tab.0.left" timestamp="1582729436255">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="245" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1582122385031" />
-    <state width="1899" height="245" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582723732611" />
-    <state width="1899" height="245" key="GridCell.Tab.0.right" timestamp="1582723732611">
+    <state width="1899" height="245" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582729436255" />
+    <state width="1899" height="245" key="GridCell.Tab.0.right" timestamp="1582729436255">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="245" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1582122385031" />
-    <state width="1899" height="245" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582723732611" />
+    <state width="1899" height="245" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582729436255" />
     <state x="2611" y="279" key="RollbackChangesDialog" timestamp="1582022348300">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -178,10 +164,10 @@
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581926514460" />
     <state x="2381" y="182" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582723051945" />
-    <state x="2472" y="269" key="Vcs.Push.Dialog.v2" timestamp="1582729228948">
+    <state x="2472" y="269" key="Vcs.Push.Dialog.v2" timestamp="1582729497874">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2472" y="269" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582729228948" />
+    <state x="2472" y="269" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582729497874" />
     <state x="2566" y="114" width="627" height="852" key="find.popup" timestamp="1582538952301">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
