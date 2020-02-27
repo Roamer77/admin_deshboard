@@ -11,7 +11,7 @@ const  PageRouter=()=>{
         <div className={classes.flex_container}>
             <BrowserRouter>
                 <Menu className={"menu" + classes.flex_element}/>
-                <div className={classes.flex_element}>
+                <div className={classes.flex_element2}>
 
                     <div className={classes.flex_container1}>
                         <div className={classes.element1}>

@@ -1,3 +1,21 @@
-.li{
-    list-style-type: none;
+
+
+.descriptionTitle{
+    display: flex;
+    align-items: center;
+
+}
+.floatActionBtn{
+
+}
+.icon{
+    display: flex;
+    border-radius: 50%;
+
+}
+
+.dropdownMenu{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
 }

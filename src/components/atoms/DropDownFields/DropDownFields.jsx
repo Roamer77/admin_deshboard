@@ -1,28 +1,28 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import Field from "../UpdateModal/InputFiels/Field";
-import {Button, Input, InputGroup, InputGroupAddon, InputGroupText} from "reactstrap";
-import classes from "../UpdateModal/InputFiels/InputField.module.css";
-import style1 from "./DropDownFields.module.css"
+import classes from "./DropDownFields.module.css"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCaretDown} from "@fortawesome/free-solid-svg-icons";
 
-const DropDownField = ({data, title}) => {
+const DropDownField = ({data, title,onFieldChange}) => {
 
     const [hideFlag, setHideFlag] = useState(false);
     const toggleTrueFalse = () => setHideFlag(!hideFlag);
-    console.log(hideFlag);
     return (
         <>
+            <div className={classes.dropdownMenu}>
+                <span className={classes.descriptionTitle}> {title}</span>
+                <div onClick={toggleTrueFalse} className={classes.floatActionBtn}>
+                    <FontAwesomeIcon icon={faCaretDown} size="2x"/>
+                </div>
+            </div>
 
-            <InputGroup>
-                <InputGroupAddon addonType="prepend">
-                    <Button color="secondary" size='sm' onClick={toggleTrueFalse} className={classes.element1}>{title}</Button>
-                </InputGroupAddon>
-                <Input className={classes.element2} placeholder={data.soleMaterial}/>
-            </InputGroup>
-            <ul style={{display: hideFlag ? 'block':'none' }}>
-                <li className={style1.li}> <Field data={data.soleHeight} title={Object.keys(data)[1]}/></li>
-                <li className={style1.li}> <Field data={data.sex} title={Object.keys(data)[2]}/></li>
-                <li className={style1.li}> <Field data={data.season} title={Object.keys(data)[3]}/></li>
-            </ul>
+            <div style={{display: hideFlag ? 'block' : 'none'}}>
+                <div ><Field data={data.soleMaterial} onFieldChange={onFieldChange} title={Object.keys(data)[0] }/></div>
+                <div ><Field data={data.soleHeight} onFieldChange={onFieldChange} title={Object.keys(data)[1]}/></div>
+                <div ><Field data={data.sex} onFieldChange={onFieldChange} title={Object.keys(data)[2]}/></div>
+                <div ><Field data={data.season} onFieldChange={onFieldChange} title={Object.keys(data)[3]}/></div>
+            </div>
         </>
     );
 };

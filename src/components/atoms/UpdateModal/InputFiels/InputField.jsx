@@ -1,21 +1,20 @@
 import React from "react";
 import Field from "./Field";
-import {Button} from "reactstrap";
 import DropDownField from "../../DropDownFields/DropDownFields";
 
-const InputFields = ({data}) => {
+const InputFields = ({data, onFieldChange}) => {
 
     return (
         <div>
-            <Field data={data.name} title='name'/>
-            <Field data={data.cost} title='cost'/>
-            <DropDownField data={data.productDescription} title='Product description'/>
-            <Field data={data.brand} title='brand'/>
-            <Field data={data.averageRating} title='averageRating'/>
-            <Field data={data.productSizes} title='productSizes'/>
-            <Field data={data.vendorCode} title='vendorCode'/>
-            <Field data={data.similaritiesIndex} title='similaritiesIndex'/>
-            <Field data={data.productCategories.categoryName} title='productCategories'/>
+            <Field data={data.name} title='name' onFieldChange={onFieldChange} />
+            <Field data={data.cost} title='cost' onFieldChange={onFieldChange}/>
+            <Field data={data.brand} title='brand' onFieldChange={onFieldChange}/>
+            <Field data={data.averageRating} title='averageRating' onFieldChange={onFieldChange}/>
+            <Field data={data.productSizes} title='productSizes' onFieldChange={onFieldChange}/>
+            <Field data={data.vendorCode} title='vendorCode' onFieldChange={onFieldChange}/>
+            <Field data={data.similaritiesIndex} title='similaritiesIndex' onFieldChange={onFieldChange}/>
+            <Field data={data.productCategories.categoryName} title='productCategories' onFieldChange={onFieldChange}/>
+            <DropDownField data={data.productDescription} title='Product description' onFieldChange={onFieldChange}/>
         </div>
     );
 };

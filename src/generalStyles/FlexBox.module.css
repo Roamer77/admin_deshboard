@@ -11,6 +11,11 @@
     flex: 1;
 }
 
+.flex_element2 {
+    height: 100%;
+    width: calc(100% - 270px);
+}
+
 .flex_container1{
     display: flex;
     flex-direction: column;

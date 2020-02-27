@@ -75,7 +75,6 @@ const ManagementPage = ({initialState}) => {
     }, []);
 
     const handleRowEdit = () => {
-        // console.log('change');
         if (selectedRecord !== undefined) {
             return gridData[selectedRecord];
         }
@@ -96,7 +95,7 @@ const ManagementPage = ({initialState}) => {
                   iterable
                   recordSelector={setSelectedRecord}
                   toolbar={() => <ManagementGridToolbar handleRowEdit={handleRowEdit}
-                                                        isSelectedRecord={!!selectedRecord}
+                                                        isSelectedRecord={!!(selectedRecord || selectedRecord === 0)}
                                                         handleRowRemove={handleRowRemove}
                                                         handleRowAdd={handleRowAdd}/>}/>
 
