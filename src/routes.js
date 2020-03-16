@@ -2,6 +2,7 @@ import ManagementPage from "./pages/ManagmentPage";
 import OrderPage from "./pages/OrderPage";
 
 import UsersPage from "./pages/UsersPage";
+import ManagersPage from "./pages/ManagersPage";
 
 
 const routes = [{
@@ -14,6 +15,9 @@ const routes = [{
 }, {
     path: '/orders',
     component: OrderPage
+},{
+    path: '/managers',
+    component: ManagersPage
 }
 ];
 

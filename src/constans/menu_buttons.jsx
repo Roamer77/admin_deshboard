@@ -7,10 +7,6 @@ const menuButtens=[{
     title:'Management',
     src:'/management',
     icon:faCalculator
-},{
-    title:'Users',
-    src:'/users',
-    icon:faTable
 }];
 
 export  default menuButtens;

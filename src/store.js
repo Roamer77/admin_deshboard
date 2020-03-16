@@ -28,6 +28,9 @@ export function rootReducer( state=INITIAL_STATE,action) {
             return {...state,listOfManagers: action.payload};
         case 'SET_LOAD_LIST_OF_PRODUCTS':
             return {...state,listOfProducts: action.payload};
+        case 'SET_NEW_PRODUCT_LIST_OF_PRODUCTS':
+            let data=state.listOfProducts.push(action.payload);
+            return {...state,listOfProducts:data};
         default:
             return state;
     }

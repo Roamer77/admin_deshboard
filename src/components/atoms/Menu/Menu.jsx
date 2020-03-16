@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import menuButtens from "../../../constans/menu_buttons";
 import CustomAlert from "../Alert/CustomAlert";
+import DropDownOptionMenu from "../DropdownOprionMemu/DropDownOptionMenu";
 
 const Menu = (props) => {
     const {className} = props;
@@ -29,6 +30,7 @@ const Menu = (props) => {
                         </Button>
                     ))
                 }
+                <DropDownOptionMenu iconStyle={classes.icon}  class={classes.leftNavBarBtn}/>
                 <CustomAlert/>
             </div>
 

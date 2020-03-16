@@ -1,14 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import useThunkReducer from "react-hook-thunk-reducer";
 import {rootReducer} from "../store";
-import {loadListOfProductsFromSever} from "../actions/actions";
+import {findProductByName, loadListOfProductsFromSever} from "../actions/actions";
 import Grid from "../components/atoms/Grid/Grid.jsx";
 import Pagination from "@material-ui/lab/Pagination";
 import classes from "../generalStyles/FlexBox.module.css";
 import ManagementGridToolbar from "../components/molecules/ManagementGridToolbar";
-import CustomModalWindow from "../components/atoms/UpdateModal/UpdateModal";
 
 const gridObjectRenderer = (data) => Object.keys(data).map(key => data[key]).join(' ');
+const arrayOfObjectRenderer = (data) => data.map((item) => (
+    gridObjectRenderer(item)
+));
 
 const columns = [
     {
@@ -30,7 +32,8 @@ const columns = [
     },
     {
         title: 'brand',
-        valueKey: 'brands'
+        valueKey: 'brands',
+        renderer: arrayOfObjectRenderer
     },
     {
         title: 'average rating',
@@ -38,7 +41,8 @@ const columns = [
     },
     {
         title: 'product size',
-        valueKey: 'productSizes'
+        valueKey: 'productSizes',
+        renderer: arrayOfObjectRenderer
     },
     {
         title: 'vendor code',
@@ -61,25 +65,45 @@ const ManagementPage = ({initialState}) => {
     const [selectedRecord, setSelectedRecord] = useState(null);
     const {listOfProducts: gridData = []} = state || {};
 
-
     const handleChange = (event, pageNumber) => {
         setCurrentPage(pageNumber);
         console.log("Page:" + pageNumber);
         console.log(gridData);
+
         dispatch(loadListOfProductsFromSever(pageNumber - 1));
         setSelectedRecord(null);
+    };
+    const handleSearchEvent = (name) => {
+        dispatch(findProductByName(name));
     };
 
     useEffect(() => {
         handleChange(null, 1);
     }, []);
 
-    const handleRowEdit = () => {
-        if (selectedRecord !== undefined) {
+
+    /*ДОПИСАТЬ*/
+    const getDataFormRow = () => {
+        if (selectedRecord) {
+            console.log("gridData");
+            console.log(gridData[selectedRecord]);
             return gridData[selectedRecord];
+        }
+        if (selectedRecord === 0) {
+            console.log("gridData");
+            console.log(gridData[selectedRecord]);
+            return gridData[selectedRecord];
+        } else {
+            console.log("Нет данных...");
         }
         return [];
     };
+
+
+    const handleRowEdit = useCallback(
+        getDataFormRow()
+    );
+
     const handleRowRemove = () => {
         console.log('remove');
     };
@@ -88,7 +112,7 @@ const ManagementPage = ({initialState}) => {
     };
 
     console.log(selectedRecord);
-
+    console.log(handleRowEdit);
     return (
         <>
             <Grid gridData={gridData} columns={columns}
@@ -96,8 +120,8 @@ const ManagementPage = ({initialState}) => {
                   recordSelector={setSelectedRecord}
                   toolbar={() => <ManagementGridToolbar handleRowEdit={handleRowEdit}
                                                         isSelectedRecord={!!(selectedRecord || selectedRecord === 0)}
-                                                        handleRowRemove={handleRowRemove}
-                                                        handleRowAdd={handleRowAdd}/>}/>
+                                                        handleSearchEvent={handleSearchEvent}
+                  />}/>
 
             <Pagination style={{height: '60px', display: 'flex', alignItems: 'center'}}
                         className={classes.paginator}

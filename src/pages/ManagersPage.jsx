@@ -8,6 +8,7 @@ import Pagination from "@material-ui/lab/Pagination";
 import ManagementGridToolbar from "../components/molecules/ManagementGridToolbar";
 
 
+const gridObjectRenderer = (data) => Object.keys(data).map(key => data[key]).join(' ');
 const columns = [
     {
         title: 'id',
@@ -19,40 +20,24 @@ const columns = [
     },
     {
         title: 'userName',
-        valueKey: 'userName'
+        valueKey: 'name'
     },
     {
         title: 'userSecondName',
-        valueKey: 'userSecondName',
+        valueKey: 'secondName',
     },
     {
-        title: 'userPhoneNumber',
-        valueKey: 'userPhoneNumber',
-    },
-    {
-        title: 'isBlocked',
-        valueKey: 'isBlocked',
-    },
-    {
-        title: 'mail',
-        valueKey: 'mail',
+        title: 'Role',
+        valueKey: 'role',
+        renderer:gridObjectRenderer
     }
 ];
 
 
-const toolBarBtns = [{
-    title: 'Add new ',
-}, {
-    title: 'Delete',
-
-}, {
-    title: 'Update',
-
-}];
-const UsersPage = ({initialState}) => {
+const ManagersPage = ({initialState}) => {
 
     const [state, dispatch] = useThunkReducer(rootReducer, initialState);
-    const {listOfAccounts: gridData = []} = state || {};
+    const {listOfManagers: gridData = []} = state || {};
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedRecord, setSelectedRecord] = useState(null);
 
@@ -60,7 +45,6 @@ const UsersPage = ({initialState}) => {
         setCurrentPage(pageNumber);
         console.log("Page:" + pageNumber);
         console.log(gridData);
-        dispatch(loadListOfAccountsFromSever(pageNumber - 1));
         dispatch(loadListOfManagersFromSever(pageNumber - 1));
         setSelectedRecord(null);
     };
@@ -89,7 +73,6 @@ const UsersPage = ({initialState}) => {
                   recordSelector={setSelectedRecord}
                   toolbar={() => <ManagementGridToolbar handleRowEdit={handleRowEdit}
                                                         isSelectedRecord={!!(selectedRecord || selectedRecord === 0)}
-
                                                         handleRowRemove={handleRowRemove}
                                                         handleRowAdd={handleRowAdd}/>}/>
             <Pagination style={{height: '60px', display: 'flex', alignItems: 'center'}} className={classes.paginator}
@@ -99,4 +82,4 @@ const UsersPage = ({initialState}) => {
     );
 };
 
-export default UsersPage;
+export default ManagersPage;

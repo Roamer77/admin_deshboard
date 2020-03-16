@@ -22,6 +22,14 @@ export function setListOfProducts(items) {
         payload: items
     };
 }
+export function addNewProductToStorage(items) {
+    return {
+        type: 'SET_NEW_PRODUCT_LIST_OF_PRODUCTS',
+        payload: items
+    };
+}
+
+
 
 const loadListOfOrdersFromSever = (page) =>{
     return async dispatch => {
@@ -88,5 +96,38 @@ export const loadListOfProductsFromSever = (page) =>{
     };
 
 } ;
+export const findProductByName = (name) =>{
+    return async dispatch => {
+        const url = 'http://192.168.176.17:8080/productsCrudOperations/findByName?name=' + name;
+        const resp = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        const parsedResp = await resp.json();
+
+        dispatch(setListOfProducts(parsedResp));
+    };
+
+};
+export const deleteItem = (id) =>{
+    return async dispatch => {
+        const url = 'http://192.168.176.17:8080/productsCrudOperations/findByName?name=' + id;
+        const resp = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        const parsedResp = await resp.json();
+
+        dispatch(setListOfProducts(parsedResp));
+    };
+
+};
+
 
 export default loadListOfOrdersFromSever;

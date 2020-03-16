@@ -7,11 +7,11 @@ import React, {useState} from "react";
 const Grid = ({gridData, columns, toolbar, recordSelector, iterable}) => {
     const [selectedRecord, setSelectedRecord] = useState(null);
 
+
     const handleRecordSelect = (recordIndex) => {
         if (recordSelector) {
             recordSelector(recordIndex);
         }
-
         setSelectedRecord(recordIndex);
     };
 
