@@ -28,7 +28,12 @@ export function addNewProductToStorage(items) {
         payload: items
     };
 }
-
+export  function deleteProductFromStoreById(id) {
+    return {
+        type: 'DELETE_PRODUCT_FROM_STORE',
+        payload: id
+    };
+}
 
 
 const loadListOfOrdersFromSever = (page) =>{

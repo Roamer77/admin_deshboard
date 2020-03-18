@@ -6,6 +6,7 @@ import Grid from "../components/atoms/Grid/Grid.jsx";
 import Pagination from "@material-ui/lab/Pagination";
 import classes from "../generalStyles/FlexBox.module.css";
 import ManagementGridToolbar from "../components/molecules/ManagementGridToolbar";
+import {useDispatch, useSelector} from "react-redux";
 
 const gridObjectRenderer = (data) => Object.keys(data).map(key => data[key]).join(' ');
 const arrayOfObjectRenderer = (data) => data.map((item) => (
@@ -59,11 +60,15 @@ const columns = [
     }
 ];
 
-const ManagementPage = ({initialState}) => {
-    const [state, dispatch] = useThunkReducer(rootReducer, initialState);
+const ManagementPage = () => {
+
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedRecord, setSelectedRecord] = useState(null);
-    const {listOfProducts: gridData = []} = state || {};
+
+    const dispatch=useDispatch();
+    const gridData = useSelector((state)=>{
+        return state.listOfProducts;
+    });
 
     const handleChange = (event, pageNumber) => {
         setCurrentPage(pageNumber);
@@ -82,7 +87,6 @@ const ManagementPage = ({initialState}) => {
     }, []);
 
 
-    /*ДОПИСАТЬ*/
     const getDataFormRow = () => {
         if (selectedRecord) {
             console.log("gridData");
@@ -104,12 +108,6 @@ const ManagementPage = ({initialState}) => {
         getDataFormRow()
     );
 
-    const handleRowRemove = () => {
-        console.log('remove');
-    };
-    const handleRowAdd = () => {
-        console.log('add');
-    };
 
     console.log(selectedRecord);
     console.log(handleRowEdit);

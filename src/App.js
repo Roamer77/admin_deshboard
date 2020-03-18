@@ -5,17 +5,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from "./components/Main";
 import store from "./store";
 import {Provider} from "react-redux";
-import DropDownOptionMenu from "./components/atoms/DropdownOprionMemu/DropDownOptionMenu";
-import DropDownField from "./components/atoms/DropDownFields/DropDownFields";
+import ImageLoader from "./components/atoms/ImageLoader/ImageLoader";
+
 
 function App() {
 
     return (
         <>
-             <Provider store={store}>
+       {/* <Provider store={store}>
                 <Main/>
-            </Provider>
-
+            </Provider>*/}
+        <ImageLoader/>
         </>
     );
 }

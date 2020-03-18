@@ -57,23 +57,7 @@ const Login=()=>{
             console.error('Ошибка:', error);
         }
     }
-   /* async function getRecuest() {
-        const url = 'http://192.168.176.17:8080/admin/test';
 
-        try {
-            const response =await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            });
-            const json = await response.json();
-            console.log('Успех:', json.toString());
-        } catch (error) {
-            console.error('Ошибка:', error);
-        }
-    }
-*/
     function changeActionLoginStatus(flag) {
             return {type: 'CHANGE_STATUS', payload: flag};
     }
