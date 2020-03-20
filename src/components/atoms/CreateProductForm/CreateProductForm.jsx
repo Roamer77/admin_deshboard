@@ -9,53 +9,64 @@ import {
     Modal,
     ModalBody,
     ModalFooter,
-    ModalHeader
+    ModalHeader, Spinner
 } from 'reactstrap';
 import classes from "../UpdateModal/UpdateModal.module.css";
 import customeStylеs from "./CreateProductForm.module.css";
-const CreateProductForm = ({isOpen}) => {
+import classNames from 'classnames';
+import ImageLoader from "../ImageLoader/ImageLoader";
+import MultiImgLoader from "../MultiImgLoader/MultiImgLoader";
+import {addNewProduct} from "../../../actions/crudOperation"
+const CreateProductForm = ({isOpen, invertOpenModalCallback}) => {
 
 
+    const [modal, setModal] = useState(!isOpen);
+    const toggle = () => {
+        setModal(!modal);
+        invertOpenModalCallback(!modal)
+    };
 
-    const [modal, setModal] = useState(isOpen);
-    const toggle = () => setModal(!modal);
 
-    const [arrayOfSizes,addItemToArrayOfSizes]=useState([]);
+    const [dataForSend,setDataForSend]=useState({});
 
-    console.log(arrayOfSizes);
+    const [smallImage,getSmallImage]=useState('');
+    const [listOfBigImages,getListOfBigImages]=useState([]);
+
+    const [arrayOfSizes, addItemToArrayOfSizes] = useState([]);
+
     const [name, setName] = useState('');
-    const [cost,setCost]=useState('');
-    const [vendorCode,setVendorCod]= useState('');
-    const [similaritiesIndex,setSimilaritiesIndex]=useState('');
-    const [productCategories,setProductCategories]=useState('');
+    const [cost, setCost] = useState('');
+    const [vendorCode, setVendorCod] = useState('');
+    const [similaritiesIndex, setSimilaritiesIndex] = useState('');
+    const [productCategories, setProductCategories] = useState('');
 
     //productDescription
-    const [prodProperty,setProdProperty]=useState('');
-    const [prodProperty1,setProdProperty1]=useState('');
-    const [sex,setSex]=useState('');
-    const [season,setSeason]=useState('');
+    const [prodProperty, setProdProperty] = useState('');
+    const [prodProperty1, setProdProperty1] = useState('');
+    const [sex, setSex] = useState('');
+    const [season, setSeason] = useState('');
 
     //brand description
-    const [brandName,setBrandName]=useState('');
-    const [brandCountry,setBrandCountry]=useState('');
-    const [manufactureCountry,setManufactureCountry]=useState('');
-    const [manufactureAddress,setManufactureAddress]=useState('');
+    const [brandName, setBrandName] = useState('');
+    const [brandCountry, setBrandCountry] = useState('');
+    const [manufactureCountry, setManufactureCountry] = useState('');
+    const [manufactureAddress, setManufactureAddress] = useState('');
 
     //prudctSize description
-    const [sizeValue,setSizeValue]=useState('');
-    const [location,setLocation]=useState('');
+    const [sizeValue, setSizeValue] = useState('');
+    const [location, setLocation] = useState('');
 
-    let firstArrOfFieldsForValidation = [name,cost,vendorCode,similaritiesIndex,productCategories];
-    let secondArrOfFieldsForValidation=[sizeValue,location];
+    const firstArrOfFieldsForValidation = [name, cost, vendorCode, similaritiesIndex, productCategories];
+    const secondArrOfFieldsForValidation = [sizeValue, location];
 
-    let descriptionTitlesForKedCategory=['Метериал подошвы','Высота подошвы'];
-    let descriptionTitlesForJacketCategory=['Ткань','Материал подкладки'];
+    const descriptionTitlesForKedCategory = ['Метериал подошвы', 'Высота подошвы'];
+    const descriptionTitlesForJacketCategory = ['Ткань', 'Материал подкладки'];
 
-    const [descriptionTitle,setDescriptionTitle]=useState(descriptionTitlesForJacketCategory[0]);
-    const [descriptionTitle1,setDescriptionTitle1]=useState(descriptionTitlesForJacketCategory[1]);
+    const [descriptionTitle, setDescriptionTitle] = useState(descriptionTitlesForJacketCategory[0]);
+    const [descriptionTitle1, setDescriptionTitle1] = useState(descriptionTitlesForJacketCategory[1]);
 
-    const changeDescriptionTitle=(data)=>{
-       let statement = String(data).toUpperCase();
+    const changeDescriptionTitle = (data) => {
+        let statement = String(data).toUpperCase();
         switch (statement) {
             case 'КУРТКИ':
                 setDescriptionTitle(descriptionTitlesForJacketCategory[0]);
@@ -81,15 +92,69 @@ const CreateProductForm = ({isOpen}) => {
                 ++counter;
             }
         });
-        console.log(counter);
         return counter > 0;
     };
-    const onSubmit=()=>{
-        console.log({});
+    const onSubmit = () => {
+        setDataForSend({
+            name, cost, vendorCode, similaritiesIndex, productCategories,
+            productDescription: {
+                prodProperty,
+                prodProperty1,
+                sex,
+                season,
+            },
+            brand:{
+                brandName,
+                brandCountry,
+                manufactureCountry,
+                manufactureAddress
+            },
+            productSize:{
+                arrayOfSizes,
+                location
+            },
+            productImgs:{
+                smallImage,
+                listOfBigImages
+            }
+
+        });
+        console.log({
+            name, cost, vendorCode, similaritiesIndex, productCategories,
+            productDescription: {
+                prodProperty,
+                prodProperty1,
+                sex,
+                season,
+            },
+            brand:{
+                brandName,
+                brandCountry,
+                manufactureCountry,
+                manufactureAddress
+            },
+            productSize:{
+                arrayOfSizes,
+                location
+            },
+            productImgs:{
+                smallImage,
+                listOfBigImages
+            }
+
+        });
+    };
+    const [success,onSuccess]=useState(true);
+    const [error,onError]=useState('');
+
+    const sendDataToServer=()=>{
+        addNewProduct(dataForSend,onSuccess,onError);
+        onSuccess(true);
+        console.log(error);
     };
 
     return (
-        <Modal isOpen={modal} toggle={toggle}>
+        <Modal className={success? classNames(customeStylеs.background,customeStylеs.blured) : null} isOpen={modal} toggle={toggle}>
             <ModalHeader toggle={toggle}>Create new product</ModalHeader>
             <ModalBody className={classes.modal}>
                 <Form>
@@ -132,9 +197,9 @@ const CreateProductForm = ({isOpen}) => {
                     <Label size='lg'>Описание продукта( для кед)</Label>
                     <hr color="black"/>
                     <FormGroup>
-                        <Label >Категория продукта</Label>
-                        <Input  type='select'
-                                onChange={(e) => changeDescriptionTitle(e.target.value)}>
+                        <Label>Категория продукта</Label>
+                        <Input type='select'
+                               onChange={(e) => changeDescriptionTitle(e.target.value)}>
                             <option>Куртки</option>
                             <option>Кеды</option>
                         </Input>
@@ -142,30 +207,30 @@ const CreateProductForm = ({isOpen}) => {
                     </FormGroup>
 
                     <FormGroup>
-                        <Label >{descriptionTitle}</Label>
+                        <Label>{descriptionTitle}</Label>
                         <Input valid={validateField(prodProperty)} invalid={!validateField(prodProperty)}
                                onChange={(e) => setProdProperty(e.target.value)}/>
                         <FormFeedback valid>Всё хорошо </FormFeedback>
                     </FormGroup>
 
                     <FormGroup>
-                        <Label >{descriptionTitle1}</Label>
+                        <Label>{descriptionTitle1}</Label>
                         <Input valid={validateField(prodProperty1)} invalid={!validateField(prodProperty1)}
                                onChange={(e) => setProdProperty1(e.target.value)}/>
                         <FormFeedback valid>Всё хорошо </FormFeedback>
                     </FormGroup>
 
                     <FormGroup>
-                        <Label >Пол</Label>
+                        <Label>Пол</Label>
                         <Input valid={validateField(sex)} invalid={!validateField(sex)}
                                onChange={(e) => setSex(e.target.value)}/>
                         <FormFeedback valid>Всё хорошо </FormFeedback>
                     </FormGroup>
 
                     <FormGroup>
-                        <Label >Выберать сезон</Label>
-                        <Input  type='select' valid={validateField(season)} invalid={!validateField(season)}
-                                onChange={(e) => setSeason(e.target.value)}>
+                        <Label>Выберать сезон</Label>
+                        <Input type='select' valid={validateField(season)} invalid={!validateField(season)}
+                               onChange={(e) => setSeason(e.target.value)}>
                             <option>Зима</option>
                             <option>Весна</option>
                             <option>Лето</option>
@@ -177,54 +242,68 @@ const CreateProductForm = ({isOpen}) => {
                     <Label size='lg'>Описание бренда</Label>
                     <hr color="black"/>
                     <FormGroup>
-                        <Label >Введите название бренда</Label>
+                        <Label>Введите название бренда</Label>
                         <Input valid={validateField(brandName)} invalid={!validateField(brandName)}
                                onChange={(e) => setBrandName(e.target.value)}/>
                         <FormFeedback valid>Всё хорошо </FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label >Введите страну бренда</Label>
+                        <Label>Введите страну бренда</Label>
                         <Input valid={validateField(brandCountry)} invalid={!validateField(brandCountry)}
                                onChange={(e) => setBrandCountry(e.target.value)}/>
                         <FormFeedback valid>Всё хорошо </FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label >Введите страну производителя </Label>
+                        <Label>Введите страну производителя </Label>
                         <Input valid={validateField(manufactureCountry)} invalid={!validateField(manufactureCountry)}
                                onChange={(e) => setManufactureCountry(e.target.value)}/>
                         <FormFeedback valid>Всё хорошо </FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label >Введите адрес производителя </Label>
+                        <Label>Введите адрес производителя </Label>
                         <Input valid={validateField(manufactureAddress)} invalid={!validateField(manufactureAddress)}
                                onChange={(e) => setManufactureAddress(e.target.value)}/>
                         <FormFeedback valid>Всё хорошо </FormFeedback>
                     </FormGroup>
 
-                    <Label size='lg' >Описание размеров</Label>
+                    <Label size='lg'>Описание размеров</Label>
                     <hr color="black"/>
                     <FormGroup>
-                        <Label >Введите размер</Label>
+                        <Label>Введите размер</Label>
                         <Input valid={validateField(sizeValue)} invalid={!validateField(sizeValue)}
                                onChange={(e) => setSizeValue(e.target.value)}/>
                         <FormFeedback valid>Всё хорошо </FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label >Введите индекс страны размера</Label>
+                        <Label>Введите индекс страны размера</Label>
                         <Input valid={validateField(location)} invalid={!validateField(location)}
                                onChange={(e) => setLocation(e.target.value)}/>
                         <FormFeedback valid>Всё хорошо </FormFeedback>
-                    </FormGroup>
-                    <Button className={customeStylеs.addNewSizeBtn}  disabled={submitStatus(secondArrOfFieldsForValidation)} onClick={()=>addItemToArrayOfSizes([...arrayOfSizes,{sizeValue,location}])}>+</Button>
-                    <br/>
-                    <Button className={customeStylеs.submitBtn}  disabled={submitStatus(firstArrOfFieldsForValidation)} onClick={onSubmit}> Submit</Button>
-                </Form>
 
+                        <Button className={customeStylеs.addNewSizeBtn}
+                                disabled={submitStatus(secondArrOfFieldsForValidation)}
+                                onClick={() => addItemToArrayOfSizes([...arrayOfSizes, {
+                                    sizeValue,
+                                    location
+                                }])}>+</Button>
+
+                    </FormGroup>
+
+                    <FormGroup>
+                        <ImageLoader labelText={'Загрузить большое изображение'} getSmallImage={getSmallImage}/>
+                        <MultiImgLoader labelText={'Загрузить маленькое изображение'} getListOfBigImages={getListOfBigImages}/>
+                    </FormGroup>
+                    <br/>
+
+                    <Button className={customeStylеs.submitBtn} disabled={submitStatus(firstArrOfFieldsForValidation)}
+                            onClick={onSubmit}> Submit</Button>
+                </Form>
+                {success && <Spinner className={customeStylеs.spinner}/>}
             </ModalBody>
-                <ModalFooter>
-                    <Button color="danger" >Save</Button>{' '}
-                    <Button color="secondary" onClick={toggle}>Cancel</Button>
-                </ModalFooter>
+            <ModalFooter>
+                <Button color="danger" onClick={sendDataToServer}>Save</Button>{' '}
+                <Button color="secondary" onClick={toggle}>Cancel</Button>
+            </ModalFooter>
         </Modal>
 
     );

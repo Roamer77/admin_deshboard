@@ -1,21 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from "./components/Main";
 import store from "./store";
 import {Provider} from "react-redux";
-import ImageLoader from "./components/atoms/ImageLoader/ImageLoader";
-
+import {Input} from "reactstrap";
 
 function App() {
 
     return (
         <>
-       {/* <Provider store={store}>
+            <Provider store={store}>
                 <Main/>
-            </Provider>*/}
-        <ImageLoader/>
+            </Provider>
         </>
     );
 }

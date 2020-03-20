@@ -4,3 +4,16 @@
 .submitBtn{
     margin-left: 190px;
 }
+.background{
+    transition: .6s filter;
+    z-index: 1;
+}
+.background.blured{
+    filter:blur(3px) contrast(.8) brightness(.8);
+    z-index: 1;
+}
+.spinner{
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}

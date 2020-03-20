@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ce6c493-27a9-441c-b021-79348bbcc079" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/atoms/CreateProductForm/CreateProductForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/atoms/CreateProductForm/CreateProductForm.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/atoms/ImageLoader/ImageLoader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/atoms/MultiImgLoader/MultiImgLoader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/atoms/CreateNewProductModal/CreateNewProductModal.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/atoms/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/atoms/UpdateModal/InputFiels/Field.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/UpdateModal/InputFiels/Field.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/crudOperation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/crudOperation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/CreateProductForm/CreateProductForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/CreateProductForm/CreateProductForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/CreateProductForm/CreateProductForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/CreateProductForm/CreateProductForm.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/ImageLoader/ImageLoader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/ImageLoader/ImageLoader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/molecules/ManagementGridToolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/ManagementGridToolbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ManagmentPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ManagmentPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,18 +53,18 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard\src\images" />
-      <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard\src\components\atoms\Login" />
-      <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard\src\components\atoms\DropDownFields" />
-      <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard\src\components\atoms" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard\src\images" />
       <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard\src\components\atoms\ImageLoader" />
       <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard" />
       <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects" />
       <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard\src\images" />
+      <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard\src\components\atoms\Login" />
+      <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard\src\components\atoms\DropDownFields" />
+      <recent name="C:\Users\Valiantsin.Vorykhau\WebstormProjects\admin_deshboard\src\components\atoms" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -116,7 +112,9 @@
       <workItem from="1584359250882" duration="53000" />
       <workItem from="1584359508446" duration="10575000" />
       <workItem from="1584443760122" duration="10988000" />
-      <workItem from="1584520726253" duration="17195000" />
+      <workItem from="1584520726253" duration="17209000" />
+      <workItem from="1584604216983" duration="13225000" />
+      <workItem from="1584694827551" duration="13630000" />
     </task>
     <task id="LOCAL-00001" summary="1) добавил модалку &#10;2) отображение данных во вкладке manager and users">
       <created>1582556412461</created>
@@ -160,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584370843314</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="last">
+      <created>1584543560180</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584543560180</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +175,8 @@
     <MESSAGE value="1) добавил модалку &#10;2) отображение данных во вкладке manager and users" />
     <MESSAGE value="1 )сделал модалку &#10;2) доделал грид" />
     <MESSAGE value="Почти сделал добавление и удаление" />
-    <option name="LAST_COMMIT_MESSAGE" value="Почти сделал добавление и удаление" />
+    <MESSAGE value="last" />
+    <option name="LAST_COMMIT_MESSAGE" value="last" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="198" key="#Notifications" timestamp="1582729540018">
@@ -182,10 +188,10 @@
     </state>
     <state x="726" y="330" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1582115544488" />
     <state x="2646" y="330" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584363870627" />
-    <state x="2450" y="129" key="CommitChangelistDialog2" timestamp="1584370842236">
+    <state x="2450" y="129" key="CommitChangelistDialog2" timestamp="1584543559199">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2450" y="129" key="CommitChangelistDialog2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584370842236" />
+    <state x="2450" y="129" key="CommitChangelistDialog2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584543559199" />
     <state x="2107" y="90" key="DiffContextDialog" timestamp="1582556448389">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -198,26 +204,26 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2738" y="434" key="Github.ShareDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1583849841917" />
-    <state width="1899" height="245" key="GridCell.Tab.0.bottom" timestamp="1584530297802">
+    <state width="1899" height="245" key="GridCell.Tab.0.bottom" timestamp="1584629783407">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1582122385031" />
-    <state width="1899" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584530297802" />
-    <state width="1899" height="245" key="GridCell.Tab.0.center" timestamp="1584530297802">
+    <state width="1899" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584629783407" />
+    <state width="1899" height="245" key="GridCell.Tab.0.center" timestamp="1584629783407">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="245" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1582122385031" />
-    <state width="1899" height="245" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584530297802" />
-    <state width="1899" height="245" key="GridCell.Tab.0.left" timestamp="1584530297802">
+    <state width="1899" height="245" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584629783407" />
+    <state width="1899" height="245" key="GridCell.Tab.0.left" timestamp="1584629783406">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="245" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1582122385031" />
-    <state width="1899" height="245" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584530297802" />
-    <state width="1899" height="245" key="GridCell.Tab.0.right" timestamp="1584530297802">
+    <state width="1899" height="245" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584629783406" />
+    <state width="1899" height="245" key="GridCell.Tab.0.right" timestamp="1584629783407">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="245" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1582122385031" />
-    <state width="1899" height="245" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584530297802" />
+    <state width="1899" height="245" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584629783407" />
     <state x="2460" y="275" key="IDE.errors.dialog" timestamp="1584531863315">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -235,14 +241,14 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2472" y="269" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582815812432" />
-    <state x="2566" y="114" width="758" height="852" key="find.popup" timestamp="1584541643091">
+    <state x="2566" y="114" width="758" height="852" key="find.popup" timestamp="1584715087343">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2566" y="114" width="758" height="852" key="find.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584541643091" />
-    <state x="2536" y="250" key="run.anything.popup" timestamp="1584450434982">
+    <state x="2566" y="114" width="758" height="852" key="find.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584715087343" />
+    <state x="2536" y="250" key="run.anything.popup" timestamp="1584704816829">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2536" y="250" key="run.anything.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584450434982" />
+    <state x="2536" y="250" key="run.anything.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584704816829" />
     <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1584450197269">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

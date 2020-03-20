@@ -8,10 +8,14 @@ export const deleteDataById=(id)=>{
         .then(data => console.log(JSON.stringify(data)))
         .catch(error => console.error(error));
 };
-export  const  addNewProduct=(newProduct)=>{
+export  const  addNewProduct=(newProduct,onSuccess,onError)=>{
     postData('http://192.168.176.17:8080/productsCrudOperations/addNewProduct', newProduct)
-        .then(data => console.log(JSON.stringify(data)))
-        .catch(error => console.error(error));
+        .then((data) =>{
+            onSuccess(false);
+            console.log(JSON.stringify(data))})
+        .catch((error) =>{
+            onError(error);
+            console.error(error)});
 };
 
 function postData(url = '', data = {}) {

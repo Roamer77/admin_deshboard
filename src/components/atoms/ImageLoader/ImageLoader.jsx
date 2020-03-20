@@ -1,18 +1,56 @@
-import React, {useState} from "react";
-import {Button, Label} from "reactstrap";
-import logo from '../../../images/download.png'
-import myImag from '../../../images/logooo.jpg'
-const ImageLoader=()=>{
-    const [data,setData]=useState(logo);
+import React, {useCallback, useState} from "react";
+import {Input, Label, Spinner} from "reactstrap";
+import palaceHolder from "../../../images/download.png"
 
+const ImageLoader = ({labelText,getSmallImage}) => {
+
+    const [file, setFile] = useState(palaceHolder);
+
+    const [btnState, setBtnState] = useState(false);
+    const [spinnerState, setSpinnerState] = useState(false);
+
+    const reader = new FileReader();
+
+
+    const wordWithFile = useCallback(  (file) => {
+        if (file) {
+                reader.readAsDataURL(file);
+
+                setBtnState(true);
+
+
+                reader.onprogress = (event) => {
+                    let percentLoaded = Math.round((event.loaded / event.total) * 100);
+                    setSpinnerState(true);
+                    console.log(percentLoaded);
+                };
+                reader.onloadend = () => {
+                    //ради эффекта ))
+                    setTimeout(() => {
+                        setSpinnerState(false);
+                        setBtnState(false);
+                    }, 1000);
+                };
+                reader.onload = () => {
+                    console.log(reader.result);
+                    setFile(reader.result);
+                    getSmallImage(base64StringModify(reader.result));
+                };
+            }
+        });
+    const base64StringModify=(string)=>{
+        return  String(string).split(',')[1];
+    };
 
     return (
         <div>
-            <Label>Загрузить маленькое изображение</Label>
-            <Button onClick={()=>setData(myImag)}>+</Button>
+            <Label>{labelText}</Label>
             <div>
-                <img src={data} width='128' height='128' alt={'img'}/>
+                {spinnerState && <Spinner/>}
+                {!spinnerState && <img src={file} width='128' height='128' alt={'img'}/>}
+
             </div>
+            <Input  disabled={btnState} type='file' onChange={(e) => {wordWithFile(e.target.files[0])}}/>
         </div>
     );
 };
