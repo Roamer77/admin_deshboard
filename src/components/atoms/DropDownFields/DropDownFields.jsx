@@ -20,7 +20,6 @@ const DropDownField = ({data, title, onFieldChange, index}) => {
     }
 
     const handleDescriptionChange = (value, title) => {
-
         onFieldChange(value, title, index);
     };
 

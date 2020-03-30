@@ -20,10 +20,11 @@ const UpdateModal = ({buttonLabel, hidden, dataForFields}) => {
         setNewRowData({...newRowData, [key]: value});
     };
 
-    const [productDescription, setProductDescription] = useState({});
+
+    const [brandDescription,setBrandDescription]= useState({});
     const defaultState=dataForFields ? dataForFields.productSizes : [];
     const [productSizeArrayChanges, setProductSizeArray] = useState(defaultState);
-
+    const [productDescription, setProductDescription] = useState({});
 
     console.log(productSizeArrayChanges);
 
@@ -41,6 +42,10 @@ const UpdateModal = ({buttonLabel, hidden, dataForFields}) => {
         console.log("productDescription ниже");
         console.log(productDescription);
         setProductDescription({...productDescription, [key]: value});
+    };
+    const handleBrandDescriptionChanges = (value, key) => {
+        console.log(brandDescription);
+        setBrandDescription({...brandDescription, [key]: value});
     };
 
 
@@ -61,7 +66,13 @@ const UpdateModal = ({buttonLabel, hidden, dataForFields}) => {
                 sex: productDescription.sex,
                 season: productDescription.season
             },
-            /*brands: {},*/
+            brands: {
+                id:dataForFields.brands[0].id,
+                name:brandDescription.name,
+                brandCountry:brandDescription.brandCountry,
+                manufactureCountry:brandDescription.manufactureCountry,
+                manufactureAddress:brandDescription.manufactureAddress
+            },
             productSizes: productSizeArrayChanges,
             vendorCode: newRowData.vendorCode,
             similaritiesIndex: newRowData.similaritiesIndex,
@@ -79,6 +90,7 @@ const UpdateModal = ({buttonLabel, hidden, dataForFields}) => {
                     <InputFields data={dataForFields} onFieldChange={handleFieldChanges}
                                  onProductDescriptionChange={handleProductDescriptionChanges}
                                  onProductSizesArrayChanges={handleProductSizesArrayChanges}
+                                 onProductBrandDescription={handleBrandDescriptionChanges}
                                  productSizeArrayChanges={productSizeArrayChanges}/>
                 </ModalBody>
                 <ModalFooter>

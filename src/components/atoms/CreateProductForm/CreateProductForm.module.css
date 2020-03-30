@@ -1,19 +1,20 @@
 .addNewSizeBtn {
-    margin-left: 410px;
+    margin-top: 5px;
+    margin-left: 110px;
 }
 .submitBtn{
     margin-left: 190px;
 }
 .background{
     transition: .6s filter;
-    z-index: 1;
+
 }
 .background.blured{
     filter:blur(3px) contrast(.8) brightness(.8);
-    z-index: 1;
+
 }
 .spinner{
-    display: flex;
-    justify-content: center;
-    z-index: 10;
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
 }

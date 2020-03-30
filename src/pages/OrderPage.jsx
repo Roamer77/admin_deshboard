@@ -25,7 +25,7 @@ const OrderPage = ({initialState}) => {
     const [currentPage, setCurrentPage] = useState(1);
     const {gridItems: gridData = []} = state || {};
     const selectedProductData = selectedRecord || selectedRecord === 0 ? gridData[selectedRecord].products : null;
-
+    console.log(gridData);
     const handleChange = (event, pageNumber) => {
         setCurrentPage(pageNumber);
         console.log("Page:" + pageNumber);

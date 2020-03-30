@@ -11,7 +11,10 @@ export const deleteDataById=(id)=>{
 export  const  addNewProduct=(newProduct,onSuccess,onError)=>{
     postData('http://192.168.176.17:8080/productsCrudOperations/addNewProduct', newProduct)
         .then((data) =>{
-            onSuccess(false);
+            //задержка для эффекта)
+            setTimeout(() => {
+                onSuccess(false);
+            }, 1000);
             console.log(JSON.stringify(data))})
         .catch((error) =>{
             onError(error);
